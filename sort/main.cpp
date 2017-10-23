@@ -14,8 +14,8 @@ int main()
   cout << "Befor: " << endl;
   Print(src,count);
   
-  //Bubble_Sort(src, count,false);
-  Bubble_Sort_1(src, count,false);
+  Bubble_Sort(src, count);
+  //Bubble_Sort_1(src, count);
   cout << "After: " << endl;
   Print(src,count);
   return 0;

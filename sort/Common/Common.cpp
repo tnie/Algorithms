@@ -12,4 +12,10 @@ int Print(const int* src, const int count)
   return 0;
 }
 
+int Swap(int& left, int& right)
+{
+  int tmp = left;
+  left = right;
+  right = tmp;
+}
 #endif

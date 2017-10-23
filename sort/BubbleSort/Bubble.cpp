@@ -4,19 +4,10 @@
 #include <assert.h>
 using std::cout;
 using std::endl;
-// 第二个参数放大的
-int Swap(int& left, int& right)
-{
-   if(left > right)
-   {
-     int tmp = left;
-     left = right;
-     right = tmp;
-   }
-}
+
 /*要求排序结果是从小到大*/
 // 先把小的移到左边
-int Bubble_Sort(int* src, const int count, bool biggerOnRight)
+int Bubble_Sort(int* src, const int count)
 {
   int times = 0;
   for(int j=0;j<count-1;++j)
@@ -26,10 +17,8 @@ int Bubble_Sort(int* src, const int count, bool biggerOnRight)
     for (int i=count-1; i>j; --i)
     { // swap if need
       ++ times;
-      if (biggerOnRight)
+      if (src[i-1] > src[i])
         Swap(src[i-1], src[i]); // TODO:警惕数组越界
-      else
-        Swap(src[i], src[i-1]);
     }
     Print(src, count);
   } 
@@ -39,7 +28,7 @@ int Bubble_Sort(int* src, const int count, bool biggerOnRight)
 }
 
 // 先把大的移到右边
-int Bubble_Sort_1(int* src, const int count, bool biggerOnRight)
+int Bubble_Sort_1(int* src, const int count)
 {
   int times = 0;
   for(int j=count-1; j>0; --j)
@@ -49,11 +38,10 @@ int Bubble_Sort_1(int* src, const int count, bool biggerOnRight)
     for (int i=0; i<j; ++i)
     { // swap if need
       ++ times;
-      if (biggerOnRight)
+      if (src[i] > src[i+1])
         Swap(src[i], src[i+1]); // TODO:警惕数组越界
-      else
-        Swap(src[i+1], src[i]);
     }
+    Print(src, count);
   }
   cout << "时间复杂度 times is: " << times << endl;
   assert(times == count*(count-1)/2);
