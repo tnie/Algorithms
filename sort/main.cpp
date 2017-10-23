@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
-#include "Bubble.h"
-#include "Common.h"
+#include "BubbleSort/Bubble.h"
+#include "Common/Common.h"
 
 using namespace std;
 

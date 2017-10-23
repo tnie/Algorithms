@@ -1,6 +1,6 @@
 #include "Bubble.h"
 #include <iostream>
-#include "Common.h"
+#include "../Common/Common.h"
 #include <assert.h>
 using std::cout;
 using std::endl;
