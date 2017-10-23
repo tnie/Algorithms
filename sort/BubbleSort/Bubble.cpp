@@ -14,16 +14,22 @@ int Bubble_Sort(int* src, const int count)
   {
     // 从右向左 <-- 依次比较相邻两个元素，小的往左移
     // 循环一轮，最小的数到达最左侧
+    bool useSwap = false;  // 标识位
     for (int i=count-1; i>j; --i)
     { // swap if need
       ++ times;
       if (src[i-1] > src[i])
+      {
         Swap(src[i-1], src[i]); // TODO:警惕数组越界
+        useSwap = true;
+      }
     }
     Print(src, count);
+    if (useSwap == false)
+      break;  // 如果一次交换也未发生，说明序列已经有序
   } 
   cout << "时间复杂度 times is: " << times << endl;
-  assert(times == count*(count-1)/2);
+  assert(times <= count*(count-1)/2);
   return 0;
 }
 
@@ -35,16 +41,22 @@ int Bubble_Sort_1(int* src, const int count)
   {
     // 从左向右 --> 依次比较相邻两个元素，小的往左移
     // 循环一轮，最小的数到达最左侧
+    bool useSwap = false;  // 标识位
     for (int i=0; i<j; ++i)
     { // swap if need
       ++ times;
       if (src[i] > src[i+1])
+      {
         Swap(src[i], src[i+1]); // TODO:警惕数组越界
+        useSwap = true;
+      }
     }
     Print(src, count);
+    if (useSwap == false)
+      break;  // 如果一次交换也未发生，说明序列已经有序
   }
   cout << "时间复杂度 times is: " << times << endl;
-  assert(times == count*(count-1)/2);
+  assert(times <= count*(count-1)/2);
   return 0;
 }
  
