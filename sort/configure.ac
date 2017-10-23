@@ -23,5 +23,6 @@ AC_HEADER_STDBOOL
 
 AC_CONFIG_FILES([BubbleSort/Makefile
                  Common/Makefile
+                 SelectionSort/Makefile
                  Makefile])
 AC_OUTPUT
