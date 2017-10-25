@@ -4,6 +4,7 @@
 #include "SelectionSort/Selection.h"
 #include "InsertionSort/Insertion.h"
 #include "ShellSort/Shell.h"
+#include "QuickSort/Quick.h"
 #include "Common/Common.h"
 
 using namespace std;
@@ -73,10 +74,51 @@ void Shell_1(const int* arr, const int count)
   Print(src,count);
 }
 
+void Quick(const int* arr, const int count)
+{
+  int src[count];
+  memcpy(src, arr, sizeof(int)* count);
+  cout << "Befor: " << endl;
+  Print(src,count);
+
+  cout << "QuickSorting.. " << endl;
+  Quick_Sort(src+1, count-2);
+  cout << "After: " << endl;
+  Print(src,count);
+}
+
+void Quick_1(const int* arr, const int count)
+{
+  int src[count];
+  memcpy(src, arr, sizeof(int)* count);
+  cout << "Befor: " << endl;
+  Print(src,count);
+
+  cout << "Quick_1Sorting.. " << endl;
+  Quick_Sort_1(src+1, count-2);
+  cout << "After: " << endl;
+  Print(src,count);
+}
+
+void Quick_2(const int* arr, const int count)
+{
+  int src[count];
+  memcpy(src, arr, sizeof(int)* count);
+  cout << "Befor: " << endl;
+  Print(src,count);
+
+  cout << "Quick_2Sorting.. " << endl;
+  Quick_Sort_2(src+1, count-2);
+  cout << "After: " << endl;
+  Print(src,count);
+}
+
+
+
 int main()
 {
-  //int src[11]={20,5,9,3,1,2,8,4,7,6,30};
-  int src[11]={20,9,8,7,6,5,4,3,2,1,30};
+  int src[11]={20,5,9,3,1,2,8,4,7,6,30};
+  //int src[11]={20,9,8,7,6,5,4,3,2,1,30};
   //int src[9]={1,2,3,4,5,6,7,8,9};
   int count = sizeof(src)/sizeof(int);
   cout << "The num of Array is: " << count << endl;
@@ -86,10 +128,17 @@ int main()
   cout << "========================" << endl;
 //  Selection(src, count);
   cout << "========================" << endl;
-  Insertion_1(src, count);
+//  Insertion_1(src, count);
 //  cout << "========================" << endl;
 //  Insertion(src, count);
   cout << "========================" << endl;
-  Shell_1(src, count);
+//  Shell_1(src, count);
+  cout << "========================" << endl;
+  Quick(src, count);
+  cout << "========================" << endl;
+  Quick_1(src, count);
+  cout << "========================" << endl;
+  Quick_2(src, count);
+  
   return 0;
 }
