@@ -48,8 +48,10 @@ int Insertion_Sort_1(int* src, const int count)
       ++times;
       if(toInsert > src[i])    
         break;
-      Swap(src[i], src[i+1]);
+      //Swap(src[i], src[i+1]); // 并不需要交换
+      src[i+1] = src[i];
     }
+    src[i+1] = toInsert;
     /*// i+1 -> j 依次后移 , j+1 移到 i+1
     for(int k=j;k>i;--k)
     {
