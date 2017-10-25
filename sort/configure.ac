@@ -25,5 +25,6 @@ AC_CONFIG_FILES([BubbleSort/Makefile
                  Common/Makefile
                  SelectionSort/Makefile
                  InsertionSort/Makefile
+                 ShellSort/Makefile
                  Makefile])
 AC_OUTPUT

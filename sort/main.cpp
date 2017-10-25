@@ -59,6 +59,20 @@ void Insertion_1(const int* arr, const int count)
   cout << "After: " << endl;
   Print(src,count);
 }
+
+void Shell_1(const int* arr, const int count)
+{
+  int src[count];
+  memcpy(src, arr, sizeof(int)* count);
+  cout << "Befor: " << endl;
+  Print(src,count);
+
+  cout << "Shell_1Sorting.. " << endl;
+  Shell_Sort_1(src+1, count-2);
+  cout << "After: " << endl;
+  Print(src,count);
+}
+
 int main()
 {
   //int src[11]={20,5,9,3,1,2,8,4,7,6,30};
@@ -68,12 +82,14 @@ int main()
   cout << "The num of Array is: " << count << endl;
   
   /*要求排序结果是从小到大*/
-  Bubble(src, count);
+//  Bubble(src, count);
   cout << "========================" << endl;
-  Selection(src, count);
+//  Selection(src, count);
   cout << "========================" << endl;
   Insertion_1(src, count);
 //  cout << "========================" << endl;
 //  Insertion(src, count);
+  cout << "========================" << endl;
+  Shell_1(src, count);
   return 0;
 }
